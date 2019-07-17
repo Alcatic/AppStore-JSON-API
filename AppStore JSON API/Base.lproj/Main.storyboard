@@ -20,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KAy-nO-W97">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YOW-99-rav">
                                     <size key="itemSize" width="407" height="285"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RQe-It-KgX" customClass="SearchCell" customModule="AppStore_JSON_API" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="RQe-It-KgX">
                                         <rect key="frame" x="3.6666666666666665" y="0.0" width="407" height="285"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -110,17 +110,12 @@
                                             <constraint firstItem="Kpe-dz-Iyo" firstAttribute="top" secondItem="RQe-It-KgX" secondAttribute="topMargin" id="wU6-zr-goK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Up9-Qu-Umn" secondAttribute="trailing" constant="12" id="xQo-U5-Ypy"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="appImage" destination="xJh-x8-fCV" id="4Ld-gi-BeB"/>
-                                            <outlet property="appName" destination="k2j-hI-6gE" id="z66-dv-cng"/>
-                                            <outlet property="appRating" destination="V4A-yz-wQv" id="OTy-oW-2cM"/>
-                                            <outlet property="appSubtitle" destination="rKT-HB-JWP" id="atu-z8-89f"/>
-                                            <outlet property="firstPreviewImage" destination="Xhz-k1-iPr" id="YX9-c8-VfF"/>
-                                            <outlet property="secondPreviewImage" destination="yzV-yL-BqM" id="PRM-Hr-rbE"/>
-                                            <outlet property="thirdPreviewImage" destination="S2L-Rp-dgG" id="eZ5-c5-qj7"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="uxp-kd-XnE"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="hfm-ci-qXt"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,6 +128,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" largeTitleDisplayMode="always" id="WUy-zS-ZtT"/>
+                    <connections>
+                        <outlet property="searchCollectionView" destination="KAy-nO-W97" id="jGq-f6-jXy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

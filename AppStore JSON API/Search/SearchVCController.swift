@@ -15,9 +15,16 @@ class SearchVC: UIViewController {
         // Do any additional setup after loading the view.
         fetchApiData()
     }
-
+    
+    @IBOutlet weak var searchCollectionView: UICollectionView!
+    
+    
+    fileprivate var appResults = [Result]()
+    
+    
 
     func fetchApiData(){
+        
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
         guard let url = URL(string: urlString) else{return}
         
@@ -31,9 +38,13 @@ class SearchVC: UIViewController {
             
             do{
                 
+                //Convert JSON received based on the Data Model you provide(SearchResult.self)
             let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-            print(searchResult)
-            
+            self.appResults = searchResult.results
+                DispatchQueue.main.async {
+                   //Reload CollectionView because user internet may be slow
+                    self.searchCollectionView.reloadData()
+                }
             }catch{
                 print("in catch block -> \(error)")
             }
@@ -48,11 +59,11 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return appResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         return cell
     }
     
