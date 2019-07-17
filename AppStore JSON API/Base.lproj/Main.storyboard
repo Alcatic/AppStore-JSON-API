@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="RQe-It-KgX">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="RQe-It-KgX" customClass="SearchCell" customModule="AppStore_JSON_API" customModuleProvider="target">
                                         <rect key="frame" x="3.6666666666666665" y="0.0" width="407" height="285"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -110,6 +110,15 @@
                                             <constraint firstItem="Kpe-dz-Iyo" firstAttribute="top" secondItem="RQe-It-KgX" secondAttribute="topMargin" id="wU6-zr-goK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Up9-Qu-Umn" secondAttribute="trailing" constant="12" id="xQo-U5-Ypy"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="appImage" destination="xJh-x8-fCV" id="fJP-A9-tFX"/>
+                                            <outlet property="appName" destination="k2j-hI-6gE" id="CAO-y5-xNq"/>
+                                            <outlet property="appRating" destination="V4A-yz-wQv" id="fgc-gk-nsn"/>
+                                            <outlet property="appSubtitle" destination="rKT-HB-JWP" id="MU4-Cx-Bt4"/>
+                                            <outlet property="firstPreviewImage" destination="Xhz-k1-iPr" id="ohx-2g-dFn"/>
+                                            <outlet property="secondPreviewImage" destination="yzV-yL-BqM" id="ZC4-rM-SMs"/>
+                                            <outlet property="thirdPreviewImage" destination="S2L-Rp-dgG" id="G0K-lT-e3k"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

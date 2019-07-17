@@ -25,30 +25,17 @@ class SearchVC: UIViewController {
 
     func fetchApiData(){
         
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-        guard let url = URL(string: urlString) else{return}
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        Service.shared.fetchApps { searchResult, error in
             
-            
-            if let error = error{
-                print("error in getting data \(error)")
+            if error != nil{
+                print("error")
             }
-            guard let data = data else{return}
-            
-            do{
-                
-                //Convert JSON received based on the Data Model you provide(SearchResult.self)
-            let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-            self.appResults = searchResult.results
-                DispatchQueue.main.async {
-                   //Reload CollectionView because user internet may be slow
-                    self.searchCollectionView.reloadData()
-                }
-            }catch{
-                print("in catch block -> \(error)")
+            self.appResults = searchResult
+            DispatchQueue.main.async {
+                //Reload CollectionView because user internet may be slow
+                self.searchCollectionView.reloadData()
             }
-        }.resume()
+        }
     }
 }
 
@@ -63,7 +50,11 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCell
+        cell.appName.text = appResults[indexPath.item].trackName
+        cell.appSubtitle.text = appResults[indexPath.item].primaryGenreName
+        cell.appRating.text = "\(appResults[indexPath.item].averageUserRating ?? 0)"
+        
         return cell
     }
     
