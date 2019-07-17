@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchVC: UIViewController {
 
@@ -51,10 +52,9 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCell
-        cell.appName.text = appResults[indexPath.item].trackName
-        cell.appSubtitle.text = appResults[indexPath.item].primaryGenreName
-        cell.appRating.text = "\(appResults[indexPath.item].averageUserRating ?? 0)"
         
+        let appResult = appResults[indexPath.item]
+        cell.appResult = appResult
         return cell
     }
     
