@@ -14,6 +14,8 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationItem.largeTitleDisplayMode = .always
+        setupSearchBar()
         fetchApiData()
     }
     
@@ -21,12 +23,21 @@ class SearchVC: UIViewController {
     
     
     fileprivate var appResults = [Result]()
+    var timer: Timer?
+    let searchBarController = UISearchController(searchResultsController: nil)
+    
+    func setupSearchBar(){
+        navigationItem.searchController = searchBarController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchBarController.dimsBackgroundDuringPresentation = false
+        searchBarController.searchBar.delegate = self
+    }
     
     
-
     func fetchApiData(){
         
-        Service.shared.fetchApps { searchResult, error in
+        Service.shared.fetchApps(searchTerm: "Jamaica") { searchResult, error in
             
             if error != nil{
                 print("error")
@@ -41,8 +52,7 @@ class SearchVC: UIViewController {
 }
 
 
-
-
+//MARK: CollectionView Delegate Methods
 extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     
@@ -57,6 +67,25 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource{
         cell.appResult = appResult
         return cell
     }
+}
+
+
+//MARK: SearchBar Delegate Methods
+extension SearchVC: UISearchBarDelegate{
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //timer?.invalidate()//holds off on calling api for a bit
+        
+        //Add Timer to wait for the user to type more in searchbar text area
+       // timer = Timer.init(timeInterval: 0.5, repeats: false, block: { (_) in
+            
+            Service.shared.fetchApps(searchTerm: searchText) { (results, err) in
+                self.appResults = results
+                DispatchQueue.main.async {
+                    self.searchCollectionView.reloadData()
+                }
+            }
+        //})
+    }
 }
