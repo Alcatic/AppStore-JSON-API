@@ -215,6 +215,11 @@
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                            <connections>
+                                                                <outlet property="appCategory" destination="0LJ-tT-jdm" id="cj3-M5-TO6"/>
+                                                                <outlet property="appImage" destination="HgH-GB-kEM" id="rPO-QK-1yx"/>
+                                                                <outlet property="appName" destination="1ml-kj-Hq6" id="0DY-gU-ubb"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>

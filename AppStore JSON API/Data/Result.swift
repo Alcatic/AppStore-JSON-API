@@ -8,6 +8,7 @@
 
 import UIKit
 
+//FetchData
 struct Result: Decodable{
     let trackName: String
     let primaryGenreName: String
@@ -21,6 +22,8 @@ struct SearchResult: Decodable{
     let results: [Result]
 }
 
+
+//GetData
 struct ApiResponse: Decodable{
     
     let feed:Feed

@@ -44,10 +44,29 @@ class Service{
     }
     
     
+    
+    
+    
+    //Fetch Apps
     func fetchData(completion:@escaping (ApiResponse?,Error?)->() ){
         
-        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json") else{return}
+        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json"
+        fetchApiResponseGroup(urlString: urlString, completion: completion)
+    }
+    
+    
+    //Fetch Music
+    func fetchMusic(completion:@escaping (ApiResponse?,Error?)->() ){
         
+        let musicUrlString =  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-songs/all/50/explicit.json"
+        fetchApiResponseGroup(urlString: musicUrlString, completion: completion)
+    }
+    
+    
+    //Helper
+    func fetchApiResponseGroup(urlString: String , completion:@escaping (ApiResponse?,Error?) ->Void){
+        
+        guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             
             if err != nil{
@@ -58,13 +77,15 @@ class Service{
             guard let data = data else{return}
             
             do{
-                let jsonData = try JSONDecoder().decode(ApiResponse.self, from: data)
-                completion(jsonData, nil)
+                let apiResponseGroup = try JSONDecoder().decode(ApiResponse.self, from: data)
+                completion(apiResponseGroup, nil)
             }catch{
                 completion(nil, error)
                 print("Failed to decode jsonData check a key name or sumn")
             }
             
-        }.resume()
+            }.resume()
+        
+        
     }
 }

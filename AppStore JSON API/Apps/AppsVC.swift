@@ -13,20 +13,8 @@ class AppsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
-
-    func getData(){
-        
-        Service.shared.fetchData { (apiResults,error) in
-            
-            if error != nil{
-                print("error in getData")
-            }
-            
-            
-        }
-    }
+    
     
 
 }
@@ -35,7 +23,7 @@ extension AppsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
     
     
