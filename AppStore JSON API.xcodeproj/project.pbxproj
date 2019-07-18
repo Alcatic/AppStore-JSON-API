@@ -20,6 +20,7 @@
 		5A0FA27D22DEB4FD00D36949 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27C22DEB4FD00D36949 /* Result.swift */; };
 		5A0FA27F22DEC15400D36949 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27E22DEC15400D36949 /* Service.swift */; };
 		5AD4AFF922DFE9F000AE1540 /* InsideAppsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4AFF822DFE9F000AE1540 /* InsideAppsCollectionCell.swift */; };
+		5AD4AFFB22DFEFEB00AE1540 /* CellInsideHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4AFFA22DFEFEB00AE1540 /* CellInsideHeader.swift */; };
 		9B7642B8F6CDAEB05F86EA8A /* Pods_AppStore_JSON_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1265886F26BE4FBCF4715879 /* Pods_AppStore_JSON_API.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		5A0FA27C22DEB4FD00D36949 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5A0FA27E22DEC15400D36949 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Service.swift; path = ../Service.swift; sourceTree = "<group>"; };
 		5AD4AFF822DFE9F000AE1540 /* InsideAppsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAppsCollectionCell.swift; sourceTree = "<group>"; };
+		5AD4AFFA22DFEFEB00AE1540 /* CellInsideHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInsideHeader.swift; sourceTree = "<group>"; };
 		C6ADB75FFAA766B5FD761E3F /* Pods-AppStore JSON API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore JSON API.debug.xcconfig"; path = "Target Support Files/Pods-AppStore JSON API/Pods-AppStore JSON API.debug.xcconfig"; sourceTree = "<group>"; };
 		CE11A4C520DE23AB97C76009 /* Pods-AppStore JSON API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore JSON API.release.xcconfig"; path = "Target Support Files/Pods-AppStore JSON API/Pods-AppStore JSON API.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +65,7 @@
 				5A09F6B622DFDEC3000BC2CB /* AppsCell.swift */,
 				5A09F6B822DFDF36000BC2CB /* AppsHeader.swift */,
 				5AD4AFF822DFE9F000AE1540 /* InsideAppsCollectionCell.swift */,
+				5AD4AFFA22DFEFEB00AE1540 /* CellInsideHeader.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				5A09F6B722DFDEC3000BC2CB /* AppsCell.swift in Sources */,
 				5A09F6B922DFDF36000BC2CB /* AppsHeader.swift in Sources */,
 				5A0FA27D22DEB4FD00D36949 /* Result.swift in Sources */,
+				5AD4AFFB22DFEFEB00AE1540 /* CellInsideHeader.swift in Sources */,
 				5A0FA26322DEA98400D36949 /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

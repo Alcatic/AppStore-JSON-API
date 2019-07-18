@@ -199,11 +199,42 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <outlet property="theInsideCollectionView" destination="THj-S3-KEy" id="lvT-ja-yTq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="appsHeader" id="42O-0j-gze" customClass="AppsHeader" customModule="AppStore_JSON_API" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-hL-bGg">
+                                            <rect key="frame" x="8" y="8" width="398" height="115"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qqV-vp-dgV">
+                                                <size key="itemSize" width="286" height="103"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellInsideHeader" id="AkM-Er-N5U" customClass="CellInsideHeader" customModule="AppStore_JSON_API" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="6" width="286" height="103"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="103"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                    <color key="backgroundColor" red="0.97193416649496733" green="0.19915974189441865" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="42O-0j-gze" id="LfE-TP-NGQ"/>
+                                                <outlet property="delegate" destination="42O-0j-gze" id="OV1-V1-Su2"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
                                     <color key="backgroundColor" red="1" green="0.96497580981673847" blue="0.17582283492272655" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                 </collectionReusableView>
                                 <connections>

@@ -11,6 +11,7 @@ import UIKit
 class AppsCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var theInsideCollectionView: UICollectionView!
     
     
      

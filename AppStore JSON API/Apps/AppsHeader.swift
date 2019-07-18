@@ -11,3 +11,18 @@ import UIKit
 class AppsHeader: UICollectionReusableView {
         
 }
+
+extension AppsHeader: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellInsideHeader", for: indexPath) as! CellInsideHeader
+        
+        return cell
+    }
+    
+    
+    
+}
