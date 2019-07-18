@@ -15,10 +15,12 @@
 		5A0FA26822DEA98400D36949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FA26622DEA98400D36949 /* Main.storyboard */; };
 		5A0FA26A22DEA98B00D36949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FA26922DEA98B00D36949 /* Assets.xcassets */; };
 		5A0FA26D22DEA98B00D36949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0FA26B22DEA98B00D36949 /* LaunchScreen.storyboard */; };
-		5A0FA27522DEA9B900D36949 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27422DEA9B900D36949 /* ThirdViewController.swift */; };
 		5A0FA27822DEAC0400D36949 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27722DEAC0400D36949 /* SearchCell.swift */; };
 		5A0FA27D22DEB4FD00D36949 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27C22DEB4FD00D36949 /* Result.swift */; };
 		5A0FA27F22DEC15400D36949 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA27E22DEC15400D36949 /* Service.swift */; };
+		5AA69FBA22E0333B0023F340 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA69FB922E0333B0023F340 /* TodayVC.swift */; };
+		5AA69FBD22E034060023F340 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA69FBC22E034060023F340 /* TodayCell.swift */; };
+		5AA69FBF22E03DA50023F340 /* TodayTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA69FBE22E03DA50023F340 /* TodayTableVC.swift */; };
 		5AD4AFF922DFE9F000AE1540 /* InsideAppsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4AFF822DFE9F000AE1540 /* InsideAppsCollectionCell.swift */; };
 		5AD4AFFB22DFEFEB00AE1540 /* CellInsideHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4AFFA22DFEFEB00AE1540 /* CellInsideHeader.swift */; };
 		9B7642B8F6CDAEB05F86EA8A /* Pods_AppStore_JSON_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1265886F26BE4FBCF4715879 /* Pods_AppStore_JSON_API.framework */; };
@@ -36,10 +38,12 @@
 		5A0FA26922DEA98B00D36949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A0FA26C22DEA98B00D36949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0FA26E22DEA98B00D36949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A0FA27422DEA9B900D36949 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5A0FA27722DEAC0400D36949 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		5A0FA27C22DEB4FD00D36949 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5A0FA27E22DEC15400D36949 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Service.swift; path = ../Service.swift; sourceTree = "<group>"; };
+		5AA69FB922E0333B0023F340 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
+		5AA69FBC22E034060023F340 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		5AA69FBE22E03DA50023F340 /* TodayTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableVC.swift; sourceTree = "<group>"; };
 		5AD4AFF822DFE9F000AE1540 /* InsideAppsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAppsCollectionCell.swift; sourceTree = "<group>"; };
 		5AD4AFFA22DFEFEB00AE1540 /* CellInsideHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInsideHeader.swift; sourceTree = "<group>"; };
 		C6ADB75FFAA766B5FD761E3F /* Pods-AppStore JSON API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore JSON API.debug.xcconfig"; path = "Target Support Files/Pods-AppStore JSON API/Pods-AppStore JSON API.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,12 +96,12 @@
 			isa = PBXGroup;
 			children = (
 				5A0FA26022DEA98400D36949 /* AppDelegate.swift */,
+				5A0FA26B22DEA98B00D36949 /* LaunchScreen.storyboard */,
 				5A0FA26622DEA98400D36949 /* Main.storyboard */,
+				5AA69FBB22E033440023F340 /* Today */,
 				5A0FA27622DEABE000D36949 /* Search */,
 				5A09F6B522DFDE87000BC2CB /* Apps */,
-				5A0FA27422DEA9B900D36949 /* ThirdViewController.swift */,
 				5A0FA26922DEA98B00D36949 /* Assets.xcassets */,
-				5A0FA26B22DEA98B00D36949 /* LaunchScreen.storyboard */,
 				5A0FA26E22DEA98B00D36949 /* Info.plist */,
 				5A0FA27B22DEB4C000D36949 /* Data */,
 				5A0FA28022DEC1FE00D36949 /* Service */,
@@ -128,6 +132,16 @@
 				5A0FA27E22DEC15400D36949 /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5AA69FBB22E033440023F340 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				5AA69FB922E0333B0023F340 /* TodayVC.swift */,
+				5AA69FBC22E034060023F340 /* TodayCell.swift */,
+				5AA69FBE22E03DA50023F340 /* TodayTableVC.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 		723F5FA21EBC6D03CCA06CE7 /* Pods */ = {
@@ -264,15 +278,17 @@
 			files = (
 				5A0FA26522DEA98400D36949 /* AppsVC.swift in Sources */,
 				5A0FA27F22DEC15400D36949 /* Service.swift in Sources */,
+				5AA69FBF22E03DA50023F340 /* TodayTableVC.swift in Sources */,
 				5A0FA27822DEAC0400D36949 /* SearchCell.swift in Sources */,
 				5AD4AFF922DFE9F000AE1540 /* InsideAppsCollectionCell.swift in Sources */,
 				5A0FA26122DEA98400D36949 /* AppDelegate.swift in Sources */,
-				5A0FA27522DEA9B900D36949 /* ThirdViewController.swift in Sources */,
+				5AA69FBA22E0333B0023F340 /* TodayVC.swift in Sources */,
 				5A09F6B722DFDEC3000BC2CB /* AppsCell.swift in Sources */,
 				5A09F6B922DFDF36000BC2CB /* AppsHeader.swift in Sources */,
 				5A0FA27D22DEB4FD00D36949 /* Result.swift in Sources */,
 				5AD4AFFB22DFEFEB00AE1540 /* CellInsideHeader.swift in Sources */,
 				5A0FA26322DEA98400D36949 /* SearchVC.swift in Sources */,
+				5AA69FBD22E034060023F340 /* TodayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

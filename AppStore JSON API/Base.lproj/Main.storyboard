@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8rJ-Kc-sve">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -314,28 +314,103 @@
                     <connections>
                         <segue destination="eDO-pJ-rMi" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="5yl-yd-FXJ" kind="relationship" relationship="viewControllers" id="v1x-7p-ypK"/>
+                        <segue destination="dS6-rq-emk" kind="relationship" relationship="viewControllers" id="v1x-7p-ypK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--Today's Apps-->
         <scene sceneID="hJX-Y1-PFk">
             <objects>
-                <viewController id="5yl-yd-FXJ" sceneMemberID="viewController">
+                <viewController id="5yl-yd-FXJ" customClass="TodayVC" customModule="AppStore_JSON_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="olS-ok-slH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1eT-2L-d2O">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qnV-vn-rLZ">
+                                    <size key="itemSize" width="261" height="283"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="todayCell" id="I0f-CM-H0K" customClass="TodayCell" customModule="AppStore_JSON_API" customModuleProvider="target">
+                                        <rect key="frame" x="76.666666666666671" y="0.0" width="261" height="283"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="261" height="283"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="YpC-ZP-17o">
+                                                    <rect key="frame" x="8" y="28" width="245" height="247"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="YpC-ZP-17o" firstAttribute="trailing" secondItem="I0f-CM-H0K" secondAttribute="trailingMargin" id="0hz-dA-MnH"/>
+                                            <constraint firstItem="YpC-ZP-17o" firstAttribute="top" secondItem="I0f-CM-H0K" secondAttribute="topMargin" id="6L8-61-Kuk"/>
+                                            <constraint firstItem="YpC-ZP-17o" firstAttribute="bottom" secondItem="I0f-CM-H0K" secondAttribute="bottomMargin" id="bST-8h-rdO"/>
+                                            <constraint firstItem="YpC-ZP-17o" firstAttribute="leading" secondItem="I0f-CM-H0K" secondAttribute="leadingMargin" id="z1U-y2-2EF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="todayImage" destination="YpC-ZP-17o" id="Hzz-Pd-26R"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5yl-yd-FXJ" id="WLL-A7-ddD"/>
+                                    <outlet property="delegate" destination="5yl-yd-FXJ" id="hur-8K-mqz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CK9-dL-HKK" firstAttribute="bottom" secondItem="1eT-2L-d2O" secondAttribute="bottom" id="2RB-3l-IXJ"/>
+                            <constraint firstItem="1eT-2L-d2O" firstAttribute="top" secondItem="CK9-dL-HKK" secondAttribute="top" id="ChQ-fb-I2t"/>
+                            <constraint firstItem="CK9-dL-HKK" firstAttribute="trailing" secondItem="1eT-2L-d2O" secondAttribute="trailing" id="Uq0-ga-KNX"/>
+                            <constraint firstItem="1eT-2L-d2O" firstAttribute="leading" secondItem="CK9-dL-HKK" secondAttribute="leading" id="cVP-Zq-Z0A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CK9-dL-HKK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hUU-45-Vkk"/>
+                    <navigationItem key="navigationItem" title="Today's Apps" id="vie-1q-YS4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOX-KS-acS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="0.0"/>
+            <point key="canvasLocation" x="2036.2318840579712" y="0.0"/>
+        </scene>
+        <!--Today TableVC-->
+        <scene sceneID="6lP-4b-nMk">
+            <objects>
+                <tableViewController id="W1q-Ee-jqh" customClass="TodayTableVC" customModule="AppStore_JSON_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XIh-a7-J0P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="148" id="23f-g4-gfA">
+                                <rect key="frame" x="0.0" y="28" width="414" height="148"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="23f-g4-gfA" id="EW9-Rq-OdC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="147.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W1q-Ee-jqh" id="CGG-dq-d2T"/>
+                            <outlet property="delegate" destination="W1q-Ee-jqh" id="IPI-fB-xKP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXV-Fc-aO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2947.826086956522" y="22.826086956521742"/>
         </scene>
         <!--Search-->
         <scene sceneID="rix-9w-WTK">
@@ -356,8 +431,28 @@
             </objects>
             <point key="canvasLocation" x="-826.08695652173924" y="726.5625"/>
         </scene>
+        <!--Today-->
+        <scene sceneID="pmi-xU-mZu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dS6-rq-emk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" id="hUU-45-Vkk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mc9-zQ-tOS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5yl-yd-FXJ" kind="relationship" relationship="rootViewController" id="iWl-t8-PVl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhx-ax-5EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.985507246377" y="0.0"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="3" width="275" height="183"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
