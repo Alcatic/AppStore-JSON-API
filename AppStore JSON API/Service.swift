@@ -42,4 +42,29 @@ class Service{
             }
             }.resume()
     }
+    
+    
+    func fetchData(completion:@escaping (ApiResponse?,Error?)->() ){
+        
+        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json") else{return}
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            
+            if err != nil{
+                completion(nil, err)
+                print(err?.localizedDescription)
+            }
+            
+            guard let data = data else{return}
+            
+            do{
+                let jsonData = try JSONDecoder().decode(ApiResponse.self, from: data)
+                completion(jsonData, nil)
+            }catch{
+                completion(nil, error)
+                print("Failed to decode jsonData check a key name or sumn")
+            }
+            
+        }.resume()
+    }
 }
